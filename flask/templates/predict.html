@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/style/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/style/predict.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <ul>
+                <a href='{{url_for("home")}}'><li>HOME</li></a>
+                <a href='{{url_for("predict")}}' class="active"><li>PREDICT</li></a>
+                <a href='{{url_for("team")}}'><li>TEAM</li></a>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div>
+            <img src="../static/images/Data analysis-rafiki.png" width="550px">
+        </div>
+        <form action='{{url_for("result")}}' method="post">
+            <div>
+                <div class="inputs">
+                    <label>FLIGHT NUMBER:</label><br/>
+                    <input type="number" required name="fltnum" placeholder="Flight number">
+                </div>
+                <div class="inputs">
+                    <label>MONTH:</label><br/>
+                    <input type="number" min="1" max="12" required name="month" placeholder="month">
+                </div>
+            </div>
+            <div>
+                <div class="inputs">
+                    <label>DAY OF MONTH:</label><br/>
+                    <input type="number"required min="1" max="30" name="dayofmonth" placeholder="Day of month">
+                </div>
+                <div class="inputs">
+                 <label>DAY OF WEEK</label><br/>
+                 <input type="number" min="1" max="7"  required name="dayofweek" placeholder="Day of week">
+                </div>
+            </div>
+            <div>
+                <div class="inputs">
+                    <label>ORIGIN:</label><br/>
+                    <select name="origin">
+                        <option value="msp">MSP</option>
+                        <option value="dtw">DTW</option>
+                        <option value="jfk">JFK</option>
+                        <option value="sea">SEA</option>
+                        <option value="atl">ALT</option>
+                    </select>
+                </div>
+                <div class="inputs">
+                    <label>DESTINATION:</label><br/>
+                    <select  name="destination">
+                        <option value="msp">MSP</option>
+                        <option value="dtw">DTW</option>
+                        <option value="jfk">JFK</option>
+                        <option value="sea">SEA</option>
+                        <option value="atl">ALT</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="inputs">
+                    <label>SCHEDULED DEPARTURE TIME:</label><br/>
+                    <input type="number" min="1" name="dept" required placeholder="scheduled dep time">    
+                </div>
+                <div class="inputs">
+                    <label>SCHEDULED ARRIVAL TIME:</label><br/>
+                    <input type="number" min="1" name="arrtime" required placeholder="arrival time">
+                </div>
+            </div>
+            <div class="inputs">
+                <label>ACTUAL DEPARTURE TIME:</label>
+                <input type="number" name="acttime" min="1" required placeholder="actual dep time">
+            </div>
+            <div class="inputs">
+                <button class="btn"  type="submit">PREDICT</button>
+            </div>
+        </form>
+    </div>
+    <script src="../static/flight.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  {% for i in range(1000000)%}
+  {% if (i==1) %}
+        <ul style="display:flex;flex-direction:column;justify-content:center;align-items:center;position:absolute;top:50%;left:45%;z-index:-1;">
+            <li>
+              <div class="loader">
+                <div class="child"></div>
+              </div>
+            </li>
+            <li>
+              <div class="text"></div>
+            </li>
+          </ul>
+          {% endif %}
+          {% if(i==999999) %}
+          <div class="result-main-con">
+          {% if (show==1) %}
+            <div style="padding-top:80px;">
+              <img src="../static/images/Stranded traveler-pana (1).png" width="500px">
+            </div>
+            {% endif %}
+            <div class="result-container">
+                <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;padding:30px;padding-inline:100px;border-radius:10px;">
+                    <div style="display:flex;flex-direction: column;justify-content:center;align-items:center;">
+                        <h1>{{ans}}</h1>
+                        <img src="../static/images/Animation - 1720021688383.gif">
+                    </div>
+                    <div style="display:flex;gap:150px;margin-top:100px;">
+                         <a href="{{url_for('predict')}}"><button class="btn">PREDICT</button></a> 
+                         <a href="{{url_for('home')}}"><button class="btn">HOME</button></a> 
+                    </div>
+                </div>
+              </div>
+              {% if(show==0)%}
+              <div style="padding-top:80px;">
+                <img src="../static/images/Departing-cuate.png" width="500px">
+              </div>
+              {% endif %}
+          </div>
+
+          {% endif %}
+          {% endfor %}
+</body>
+</html>

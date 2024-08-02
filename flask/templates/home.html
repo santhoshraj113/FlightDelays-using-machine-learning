@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <ul>
+               <a href='{{url_for("home")}}' class="active"><li>HOME</li></a>
+               <a href='{{url_for("predict")}}'><li>PREDICT</li></a>
+               <a href='{{url_for("team")}}'><li>TEAM</li></a>
+            </ul>
+        </nav>
+    </div>
+    <div class="home-container">
+        <div>
+         <img src="../static/images/4944426.jpg" width="500px">
+        </div>
+        <div>
+            <section>
+                <div>
+                    <h1 class="title title1">FLIGHT DELAY</h1>
+                    <h3 class="title title2">PREDICTION</h3>
+                </div>
+            </section>
+            <div class="btn-div">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m6 9l6 6l6-6"/></svg>
+                <a href='{{url_for("predict")}}'><button class="btn" >PREDICT<img src="../static/images/airplane.png" width="15px" style="display:inline-block;margin-left:10px;margin-top:1px;"></button></a>
+            </div><br/><br/>
+        </div>
+    </div><br/><br/><br/><br/>
+   <hr/>
+    <section class="content-sec">
+          <div class="img-div">
+              <img src="../static/images/flight-delays1.webp" alt="delay-img" width="500px" height="350px">
+          </div>
+          <div class="content-div">
+            Flight delays can cause significant disruptions and inconveniences for travelers, leading to a host of problems. These issues include schedule disruptions, missed connections, and the resulting frustration and anxiety. Passengers often endure extended waiting times at the airport, facing discomfort and limited access to amenities. The financial burden of unexpected expenses for meals, accommodations, or alternative transportation adds to the stress. Health and comfort concerns arise from prolonged periods of sitting and waiting, while the uncertainty about future travel plans, including hotel reservations and scheduled activities, can be overwhelming.
+        </div>            
+    </section>
+    <br/><br/>
+    <hr/>
+    <section class="content-sec2">
+        <div class="content-div2">
+          Understanding the severity of these challenges, I was inspired to create a flight delay prediction system using machine learning. By analyzing vast amounts of historical flight data, weather patterns, air traffic control information, and other relevant factors, this system can accurately predict potential delays. This advanced technology allows airlines and passengers to better prepare for and mitigate the impact of delays.
+With this flight delay prediction system, passengers can receive real-time updates and make informed decisions about their travel plans. Airlines can optimize their operations, improve scheduling, and enhance overall customer satisfaction. By reducing the uncertainty and stress associated with flight delays, this innovative solution aims to improve the travel experience for everyone involved.
+        </div>
+        <div class="img-div2">
+            <img src="../static/images/analytics.gif" width="400px">
+        </div>
+    </section>
+    <hr/>
+  <script src="../static/flight.js"></script>
+</body>
+</html>
